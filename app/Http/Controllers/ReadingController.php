@@ -35,4 +35,10 @@ class ReadingController extends Controller
 
         return redirect()->route('readings.index')->with('success', 'Your tarot reading request has been submitted.');
     }
+
+    public function publicIndex()
+    {
+        // Optionally, you could show featured readings, info about services, etc.
+        return view('pages.readings');
+    }
 }

@@ -20,6 +20,10 @@
                         class="text-gray-900 dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('readings.index')" :active="request()->routeIs('readings.index')"
+                        class="text-gray-900 dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300">
+                        {{ __('Readings') }}
+                    </x-nav-link>
                 </div>
             </div>
 
