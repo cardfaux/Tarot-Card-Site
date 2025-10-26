@@ -5,12 +5,12 @@
 
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-17">
+        <div class="flex justify-between h-22">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                        <x-application-logo class="block h-13 w-auto fill-current text-gray-800 dark:text-gray-200" />
                     </a>
                 </div>
 
@@ -23,6 +23,10 @@
                     <x-nav-link :href="route('readings.index')" :active="request()->routeIs('readings.index')"
                         class="text-gray-900 dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300">
                         {{ __('Readings') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('blog.index')" :active="request()->routeIs('blog.index')"
+                        class="text-gray-900 dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300">
+                        {{ __('Blog') }}
                     </x-nav-link>
                 </div>
             </div>

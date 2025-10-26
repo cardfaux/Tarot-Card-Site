@@ -9,6 +9,6 @@
     <source srcset="{{ asset('images/logo-dark.avif') }}" media="(prefers-color-scheme: dark)"> --}}
     <source srcset="{{ asset('images/logo.avif') }}" media="(prefers-color-scheme: dark)">
     <!-- Light mode version -->
-    <img src="{{ asset('images/logo.avif') }}" alt="Application Logo" {{ $attributes->merge(['class' => 'w-auto h-40
+    <img src="{{ asset('images/logo.avif') }}" alt="Application Logo" {{ $attributes->merge(['class' => 'w-auto
     object-contain']) }}>
 </picture>
