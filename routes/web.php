@@ -5,7 +5,8 @@ use App\Http\Controllers\ReadingController;
 use Illuminate\Support\Facades\Route;
 
 // Public Pages
-Route::view('/', 'welcome');
+//Route::view('/', 'welcome');
+Route::view('/', 'pages.home')->name('home');
 Route::view('/about', 'pages.about')->name('about');
 Route::view('/contact', 'pages.contact')->name('contact');
 Route::get('/readings', [ReadingController::class, 'publicIndex'])->name('readings');
