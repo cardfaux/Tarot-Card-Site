@@ -11,9 +11,6 @@ darkMode: localStorage.getItem('darkMode') === 'true',
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
-    {{--
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" /> --}}
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -21,9 +18,6 @@ darkMode: localStorage.getItem('darkMode') === 'true',
 
 <body class="font-sans antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
     <div class="min-h-screen">
-        {{-- <button @click="darkMode = !darkMode">
-            Toggle Dark Mode
-        </button> --}}
         @include('layouts.navigation')
 
         <!-- Page Heading -->
@@ -39,6 +33,9 @@ darkMode: localStorage.getItem('darkMode') === 'true',
         <main class="bg-white dark:bg-gray-900">
             {{ $slot }}
         </main>
+
+        <!-- Page Footer -->
+        @include('layouts.footer')
     </div>
 </body>
 

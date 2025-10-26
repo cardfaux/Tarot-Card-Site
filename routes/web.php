@@ -28,6 +28,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/readings/create', [ReadingController::class, 'create'])->name('readings.create');
     Route::post('/readings', [ReadingController::class, 'store'])->name('readings.store');
     Route::get('/readings/history', [ReadingController::class, 'index'])->name('readings.index');
+
+    Route::get('/blog/create', [BlogController::class, 'create'])->name('blog.create');
+    Route::post('/blog', [BlogController::class, 'store'])->name('blog.store');
+
+    // Blog management
+    Route::get('/dashboard/blog', [BlogController::class, 'dashboard'])->name('blog.dashboard');
+    Route::get('/dashboard/blog/{post}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+    Route::patch('/dashboard/blog/{post}', [BlogController::class, 'update'])->name('blog.update');
+    Route::delete('/dashboard/blog/{post}', [BlogController::class, 'destroy'])->name('blog.destroy');
 });
 
 require __DIR__ . '/auth.php';

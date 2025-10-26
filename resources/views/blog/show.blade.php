@@ -4,7 +4,7 @@
             @if($post->image)
             <img src="{{ $post->image }}" alt="{{ $post->title }}" class="w-full h-64 object-cover rounded-lg mb-6">
             @endif
-            <h1 class="text-4xl font-serif font-bold mb-4 text-gray-900 dark:text-gray-100">{{ $post->title }}</h1>
+            <h1 class="text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">{{ $post->title }}</h1>
             <p class="text-gray-600 dark:text-gray-400 mb-8">Published on {{ $post->created_at->format('F j, Y') }}</p>
             <div class="prose dark:prose-invert max-w-full">
                 {!! $post->content !!}
