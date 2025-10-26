@@ -13,7 +13,9 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+                //sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+                heading: ["Cormorant Garamond", "serif"],
+                body: ["Source Sans Pro", "sans-serif"],
             },
         },
     },

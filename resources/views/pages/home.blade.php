@@ -7,7 +7,7 @@
                 class="absolute inset-0 w-full h-full object-cover opacity-20">
         </picture>
         <div class="relative z-10 flex flex-col items-center justify-center text-center py-24 px-6">
-            <h1 class="text-5xl md:text-6xl font-serif font-bold mb-6">Discover Your Path Through The Cards</h1>
+            <h1 class="text-5xl md:text-6xl  font-bold mb-6">Discover Your Path Through The Cards</h1>
             <p class="max-w-2xl text-lg md:text-xl text-gray-200 mb-8">
                 Unlock clarity and guidance through intuitive tarot readings tailored to your energy and journey.
             </p>
@@ -21,7 +21,7 @@
     <!-- About Section -->
     <section class="py-16 px-6 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div class="max-w-5xl mx-auto text-center">
-            <h2 class="text-3xl font-serif font-bold mb-4 text-gray-900 dark:text-gray-100">Meet Your Reader</h2>
+            <h2 class="text-3xl  font-bold mb-4 text-gray-900 dark:text-gray-100">Meet Your Reader</h2>
             <p class="text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
                 With over a decade of experience reading tarot and channeling intuitive messages,
                 our gifted reader connects deeply with spirit to offer insights on love, career, and destiny.
@@ -34,7 +34,7 @@
     <section
         class="py-20 px-6 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-serif font-bold text-center mb-10 text-gray-900 dark:text-gray-100">
+            <h2 class="text-3xl  font-bold text-center mb-10 text-gray-900 dark:text-gray-100">
                 Popular Readings
             </h2>
 
@@ -95,11 +95,50 @@
 
     <!-- Call to Action -->
     <section class="bg-indigo-900 dark:bg-indigo-800 text-white py-16 text-center">
-        <h2 class="text-3xl font-serif font-bold mb-4">Ready to Reveal What the Cards Hold?</h2>
+        <h2 class="text-3xl  font-bold mb-4">Ready to Reveal What the Cards Hold?</h2>
         <p class="mb-8 text-gray-200">Book your personalized tarot reading today and step into your clarity.</p>
         <a href="{{ route('readings.create') }}"
             class="bg-white text-indigo-800 px-6 py-3 rounded-lg text-lg font-medium hover:bg-gray-100 transition">
             Book a Reading
         </a>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="py-20 px-6 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl  font-bold mb-8 text-gray-900 dark:text-gray-100 text-center">
+                Get in Touch
+            </h2>
+            @if (session('success'))
+            <div
+                class="bg-green-100 dark:bg-green-800 border border-green-400 dark:border-green-700 text-green-700 dark:text-green-200 p-4 rounded mb-6 text-center transition-colors duration-200">
+                {{ session('success') }}
+            </div>
+            @endif
+            <form action="{{ route('contact.submit') }}" method="POST" class="space-y-6">
+                @csrf
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+                    <input type="text" name="name" required
+                        class="mt-1 block w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md focus:border-indigo-500 focus:ring focus:ring-indigo-200 dark:focus:ring-indigo-500 transition-colors duration-200">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                    <input type="email" name="email" required
+                        class="mt-1 block w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md focus:border-indigo-500 focus:ring focus:ring-indigo-200 dark:focus:ring-indigo-500 transition-colors duration-200">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+                    <textarea name="message" rows="5" required
+                        class="mt-1 block w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md focus:border-indigo-500 focus:ring focus:ring-indigo-200 dark:focus:ring-indigo-500 transition-colors duration-200"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit"
+                        class="bg-indigo-700 dark:bg-indigo-600 text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-indigo-600 dark:hover:bg-indigo-500 transition">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
     </section>
 </x-app-layout>
